@@ -1,0 +1,453 @@
+/* Import the Inter font used in professional designs */
+@import url('fonts.googleapis.com');
+
+/* 2. ADD THIS RIGHT HERE */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Global Styles & Colors --- */
+:root {
+    --primary-green: #2E7D32; /* The new professional, darker green */
+    --text-color: #333;
+    --light-bg: #fff;
+    --dark-bg: #f4f4f4;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+/* --- Main Layout: Sidebar + Content --- */
+.portfolio-wrapper {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 20px auto;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Sidebar Styling --- */
+.sidebar {
+    flex-basis: 300px;
+    background-color: var(--primary-green); /* Uses the new darker green */
+    color: white;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Adds a nice separator line */
+}
+
+.profile-header h2 {
+    color: white;
+    margin-top: 0;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.profile-header p {
+    color: white;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.navigation li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.navigation li a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.navigation li i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.social-links {
+    margin-top: auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-links a {
+    color: white;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.resume-btn {
+    background: white;
+    color: var(--primary-green); /* Uses the new darker green for text */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* --- Main Content Area Styling --- */
+.main-content {
+    flex-grow: 1;
+    background-color: var(--light-bg);
+    padding: 40px 60px;
+}
+
+.intro-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--dark-bg);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.banner-pic {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.role-title {
+    font-weight: 600;
+    color: var(--primary-green); /* Uses the new darker green */
+    margin-bottom: 20px;
+}
+
+/* --- Buttons --- */
+button.primary-btn {
+    background: var(--primary-green); /* Uses the new darker green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--primary-green); /* Uses the new darker green */
+    color: var(--primary-green); /* Uses the new darker green */
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* --- Skills Grid --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skill-card {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: var(--primary-green); /* Uses the new darker green */
+    margin-bottom: 10px;
+}
+
+/* --- Project Cards --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card a {
+    color: var(--primary-green); /* Uses the new darker green */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- Contact Form --- */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .portfolio-wrapper {
+        flex-direction: column;
+    }
+    .main-content, .sidebar {
+        padding: 20px;
+    }
+    .intro-banner {
+        flex-direction: column;
+    }
+    .banner-pic {
+        margin-top: 20px;
+    }
+}
+
+/* --- Typing Effect Cursor Styling --- */
+
+/* Base styles for the cursor element */
+.cursor {
+  display: inline-block;
+  width: 3px; /* A thin vertical line */
+  height: 1em; /* Height matches the surrounding text font size */
+  background-color: white; /* Default color for sidebar */
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/* Specific color for the cursor in the main content area */
+#main-cursor {
+    background-color: var(--primary-green);
+}
+
+/* Keyframe animation for the blinking effect */
+@keyframes blink {
+  from, to { background-color: transparent }
+  50% { background-color: inherit; } /* Inherits the correct color (white or green) */
+}
+
+/* Ensure the name elements themselves don't wrap text during the JS animation */
+#main-name, #sidebar-name {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* Optimized Mobile View */
+@media (max-width: 768px) {
+
+    /* 1. Add the Mobile Animation Definition here */
+    @keyframes slideInFromBottom {
+        0% { transform: translateY(50px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+
+        /* Update this inside your @media (max-width: 768px) block */
+    .navigation ul {
+        display: flex;
+        justify-content: space-around; /* Distributes items evenly */
+        align-items: center;           /* Centers them vertically */
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .navigation li a {
+        display: flex;
+        flex-direction: column;        /* Icon on top, text on bottom */
+        align-items: center;           /* Centers the content horizontally */
+        text-decoration: none;
+        font-size: 0.75rem;            /* Adjust text size for mobile */
+    }
+
+
+    .portfolio-wrapper {
+        flex-direction: column; 
+        margin: 0;
+        /* 2. Apply the Mobile Animation */
+        animation: slideInFromBottom 1s ease-out; 
+    }
+
+    /* ... keep all your other mobile code (sidebar, navigation, etc.) below this ... */
+    .sidebar {
+        flex-basis: auto;
+        padding: 15px 0;
+        min-height: auto; 
+    }
+
+    .portfolio-wrapper {
+        flex-direction: column; /* Stacks sidebar on top of content */
+        margin: 0;
+    }
+
+    .sidebar {
+        flex-basis: auto;
+        padding: 15px 0;
+        min-height: auto; 
+    }
+
+    .profile-header {
+        display: none; /* Hides the empty space where the name was */
+    }
+
+    .navigation ul {
+        margin-top: 0;
+        display: flex; /* Makes the menu horizontal */
+        justify-content: space-evenly;
+        padding: 0;
+    }
+
+    .navigation li a {
+        font-size: 0.8rem; /* Smaller text for mobile */
+        text-align: center;
+    }
+
+    .navigation li a i {
+        display: block; /* Puts the icon above the text */
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .intro-banner {
+        flex-direction: column-reverse; /* Puts profile pic at the top */
+        text-align: center;
+    }
+
+    .banner-pic {
+        width: 150px; 
+        height: 150px;
+        border-radius: 50%; /* Makes picture circular on mobile */
+        margin-bottom: 20px;
+    }
+}
+
+#about, #projects, #skills, #contact {
+    scroll-margin-top: 80px; /* Adjust this to the height of your mobile menu */
+}
+
+/* 1. Define the Animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100px); /* Start 100px to the left */
+        opacity: 0;                   /* Start invisible */
+    }
+    100% {
+        transform: translateX(0);     /* End at normal position */
+        opacity: 1;                   /* End fully visible */
+    }
+}
+
+/* 2. Apply it to the main wrapper */
+.portfolio-wrapper {
+    animation: slideInFromLeft 1.2s ease-out; /* Takes 1.2 seconds to slide in */
+}
+
+/* 3. Extra touch: Make the main content wait slightly (Staggered effect) */
+.main-content {
+    animation: slideInFromLeft 1.5s ease-out;
+}
+
+
+/* --- Fancy Contact Section --- */
+.contact-container {
+    display: flex;
+    gap: 40px;
+    background: #f9f9f9; /* Light grey card background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+.contact-form {
+    flex: 2; /* Form takes more space */
+}
+
+.contact-social-info {
+    flex: 1; /* Social icons area */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid #ddd;
+    padding-left: 40px;
+}
+
+.social-links-large {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Wraps icons if screen is tiny */
+}
+
+.social-links-large a {
+    font-size: 1.8rem; /* Large icons for easy clicking */
+    color: var(--primary-green);
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+/* Specific Hover Effect for the X and other icons */
+.social-links-large a:hover {
+    transform: translateY(-5px); /* Professional "pop" up */
+    color: #1b5e20; /* Darker green on hover */
+}
+
+/* --- Mobile Fix for Contact Section --- */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack form on top of icons */
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .contact-social-info {
+        border-left: none;
+        border-top: 1px solid #ddd; /* Divider line moves to top */
+        padding-left: 0;
+        padding-top: 20px;
+        text-align: center;
+    }
+    
+    .social-links-large {
+        justify-content: center; /* Center icons on phone screen */
+    }
+}

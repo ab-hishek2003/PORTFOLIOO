@@ -1,0 +1,169 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Doe's Portfolio</title>
+    <!-- Import a professional font (Inter) and icon library (FontAwesome) -->
+    <!-- Complete Font and Icon Libraries -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <div class="portfolio-wrapper">
+
+                <!-- Left Sidebar -->
+       <aside class="sidebar">
+    <div class="profile-header">
+        <!-- We removed the <h2> and <p> from here -->
+        <i class="fas fa-code" style="font-size: 2rem;"></i> <!-- Optional: Add an icon instead -->
+    </div>
+            
+            <nav class="navigation">
+
+            
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#about"><i class="fas fa-user-circle"></i> About Me</a></li>
+                    <li><a href="#projects"><i class="fas fa-laptop-code"></i> Portfolio</a></li>
+                    <li><a href="#skills"><i class="fas fa-code"></i> Skills & Expertise</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Me</a></li>
+                </ul>
+            </nav>
+
+
+            <a href="{{ url_for('static', filename='assets/resume.pdf') }}" 
+            class="resume-btn" 
+            download="Abhishek_Rautaray_Resume.pdf" 
+            style="text-decoration: none; display: block; text-align: center;">
+            Download Resume
+            </a>
+
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="intro-banner">
+                <div class="intro-text-area">
+                    <h1 id="main-name">Abhishek rautaray</h1>
+                    <span id="main-cursor" class="cursor"></span>
+
+                    <p class="role-title">MCA Student</p>
+                    <p class="bio-main">
+                        I'm a software engineer specialized in Flask and front-end development. I solve problems with elegant, efficient code. Let's make something great!
+                    </p>
+                    <div class="action-buttons">
+                        <button class="primary-btn">View My Work</button>
+
+                        <a href="{{ url_for('static', filename='assets/resume.pdf') }}" 
+                        class="secondary-btn" 
+                        download 
+                        style="text-decoration: none; display: inline-block;">
+                        Download CV
+                        </a>
+
+                    </div>
+                </div>
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Abhishek Rautaray" class="banner-pic">
+
+            </div>
+
+            <section id="about">
+                <h2>About Me</h2>
+                <p>These are the core technologies I specialize in.</p>
+                <div class="skills-grid">
+                    <!-- Example skill card, you would use Jinja here if you made a list in app.py -->
+                    <div class="skill-card">
+                        <i class="fab fa-js-square skill-icon"></i>
+                        <h3>Vanilla JavaScript</h3>
+                        <p>Foundation of all frontend interactivity.</p>
+                    </div>
+                     <div class="skill-card">
+                        <i class="fab fa-python skill-icon"></i>
+                        <h3>Python & Flask</h3>
+                        <p>Robust backend systems and data management.</p>
+                    </div>
+                     <div class="skill-card">
+                        <i class="fab fa-react skill-icon"></i>
+                        <h3>React & Vue</h3>
+                        <p>Modern framework experience for SPAs.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fab fa-html5 skill-icon"></i>
+                        <h3>HTML5 & Markup</h3>
+                        <p>Structuring semantic, accessible, and SEO-friendly web content.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fab fa-css3-alt skill-icon"></i>
+                        <h3>Modern CSS3</h3>
+                        <p>Designing responsive layouts using Flexbox, Grid, and animations.</p>
+                    </div>
+
+
+                </div>
+            </section><br>
+
+            <section id="projects">
+                <h2>My Work</h2>
+                <div class="project-grid">
+
+                    
+
+                    <!-- Jinja2 loop replaces the cards/grid structure -->
+                    {% for p in projects %}
+                    <div class="card">
+                        <h3>{{ p.name }}</h3>
+                        <p>Tech: {{ p.tech }}</p>
+                        <a href="{{ p.link }}" target="_blank">Explore Project &rarr;</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section><br>
+
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <div class="contact-form">
+                    <input type="text" id="name" placeholder="Your Name">
+                    <textarea id="message" placeholder="Message"></textarea>
+                    <button onclick="sendMessage()" class="primary-btn">Send Message</button>
+                </div>
+
+                    <div class="social-links-large">
+                        <!-- X (Twitter) -->
+                        <a href="https://x.com/rautaray90178" target="_blank" title="X (Twitter)">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+
+                        <!-- Telegram -->
+                        <a href="https://t.me/Mrseekul" target="_blank" title="Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/abhishek-rautaray-14b446342" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abhishekrautaray360@gmail.com" target="_blank" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+
+                        <!-- GitHub -->
+                        <a href="https://github.com" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

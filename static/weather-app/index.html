@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Weather App</title>
+    <!-- This links your weather app to its own style.css file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <nav style="padding: 10px; background: rgba(255,255,255,0.1);">
+        <a href="/" style="color: white; text-decoration: none; font-weight: bold;">
+            ← Back to Abhishek's Portfolio
+        </a>
+
+<div class="weather-card">
+    <div class="search">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button id="searchBtn">Search</button>
+    </div>
+    <div id="weatherInfo" class="weather-info" style="display: none;">
+        <h2 id="cityName">London</h2>
+        <p id="description">Cloudy</p>
+        <h1 id="temp">22°C</h1>
+        <div class="details">
+            <p id="humidity">Humidity: 60%</p>
+            <p id="wind">Wind: 10km/h</p>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+
+</body>
+</html>
